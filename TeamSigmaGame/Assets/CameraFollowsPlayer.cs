@@ -22,7 +22,7 @@ public class CameraFollowsPlayer : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void LateUpdate(){
+    void Update(){
         if(Input.GetKeyDown(KeyCode.Alpha2)){
             if(lockedCamera){
                 lockedCamera = false;
@@ -71,20 +71,20 @@ public class CameraFollowsPlayer : MonoBehaviour {
                     camSpeed.x = 0.0f;
                 } else {
                     if(leftCam){
-                        camSpeed.x = (-0.2f);
+                        camSpeed.x = (-0.5f);
                     }
                     if(rightCam){
-                        camSpeed.x = (0.2f);
+                        camSpeed.x = (0.5f);
                     }
                 }
                 if(upCam&&downCam||((upCam==false)&&(downCam==false))){
                     camSpeed.y = 0.0f;
                 } else {
                     if(upCam){
-                        camSpeed.y = (0.2f);
+                        camSpeed.y = (0.5f);
                     }
                     if(downCam){
-                        camSpeed.y = (-0.2f);
+                        camSpeed.y = (-0.5f);
                     }
                 }
                 transform.position += camSpeed;
